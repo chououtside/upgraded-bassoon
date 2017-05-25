@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Info = () => (
   <div>
@@ -7,6 +7,6 @@ const Info = () => (
     <div>General Location</div>
     <div>Links to all Given Profiles</div>
   </div>
-)
+);
 
-export default Info
+export default Info;
