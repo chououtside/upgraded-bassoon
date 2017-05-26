@@ -21,13 +21,18 @@ class App extends Component {
       responseType: 'json'
     })
     .then((response) => {
-      this.setState({
-        infoObject: response.data
-      })
+      if (response.status !== 200) {
+        alert('Received status code:', response.status)
+      } else {
+        this.setState({
+          infoObject: response.data
+        })
+      }
       console.log(this.state.infoObject);
     })
     .catch(function(error){
-      console.log('this is', error)
+      console.log(error);
+      alert(error);
     })
   }
 
@@ -36,6 +41,7 @@ class App extends Component {
       <div className="container app">
         <div className="row">
           <div className="col-md-offset-4 col-lg-4">
+            <h1>Person Search</h1>
             <Search search={this.searchPerson}/>
             <Info infoObject={this.state.infoObject}/>
           </div>

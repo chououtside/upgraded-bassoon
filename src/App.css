@@ -19,3 +19,12 @@ ul {
 div {
   margin: 20px;
 }
+
+span {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}

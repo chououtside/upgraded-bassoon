@@ -5,12 +5,12 @@ const Info = ({ infoObject }) => {
 
   return <div>
     <div><img src={!infoObject.photos ? 'https://goo.gl/n4mq73' : infoObject.photos[0].url} className="photo"/></div>
-    <div>Full Name: {!infoObject.contactInfo ? 'N/A' : infoObject.contactInfo.fullName}</div>
-    <div>General Location: {!infoObject.demographics ? 'N/A' : infoObject.demographics.locationGeneral}</div>
+    <div><span>Full Name: </span>{!infoObject.contactInfo ? 'N/A' : infoObject.contactInfo.fullName}</div>
+    <div><span>General Location: </span>{!infoObject.demographics ? 'N/A' : infoObject.demographics.locationGeneral}</div>
     <div>
-      Links to all Given Profiles
+      <span>Links to all Given Profiles</span>
       <ul>
-        {links.map((profile) => <li><a target="_blank" href={profile.url}>{profile.url}</a></li>)}
+        {links.map((profile, index) => <li key={index}><a target="_blank" href={profile.url}>{profile.url}</a></li>)}
       </ul>
     </div>
   </div>
