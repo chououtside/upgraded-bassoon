@@ -10,7 +10,7 @@ const Info = ({ infoObject }) => {
     <div>
       Links to all Given Profiles
       <ul>
-        {links.map((profile) => <li>{profile.url}</li>)}
+        {links.map((profile) => <li><a target="_blank" href={profile.url}>{profile.url}</a></li>)}
       </ul>
     </div>
   </div>

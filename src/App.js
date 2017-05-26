@@ -33,9 +33,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Search search={this.searchPerson}/>
-        <Info infoObject={this.state.infoObject}/>
+      <div className="container app">
+        <div className="row">
+          <div className="col-md-offset-4 col-lg-4">
+            <Search search={this.searchPerson}/>
+            <Info infoObject={this.state.infoObject}/>
+          </div>
+        </div>
       </div>
     );
   }

@@ -25,9 +25,11 @@ class Search extends Component {
 
   render () {
     return (
-      <div>
-        <input type="text" placeholder="Search a person's email" value={this.state.searchTerm} onChange={this.handleSearchTermEvent}/>
-        <button onClick={() => this.searchAndClear(this.state.searchTerm)}>Search</button>
+      <div className="input-group">
+        <input type="text" className="form-control" placeholder="Search a person's email" value={this.state.searchTerm} onChange={this.handleSearchTermEvent}/>
+        <span className="input-group-btn">
+          <button className="btn btn-secondary" onClick={() => this.searchAndClear(this.state.searchTerm)}>Search</button>
+        </span>
       </div>
     );
   }
