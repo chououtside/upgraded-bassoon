@@ -8,6 +8,16 @@ class Search extends Component {
       searchTerm: ''
     };
     this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  
+  handleKeyPress (event) {
+    if(event.key == 'Enter'){
+      this.props.search(this.state.searchTerm);
+      this.setState({
+        searchTerm: ''
+      });
+    }
   }
 
   handleSearchTermEvent (event) {
@@ -26,7 +36,7 @@ class Search extends Component {
   render () {
     return (
       <div className="input-group">
-        <input type="text" className="form-control" placeholder="Search a person's email" value={this.state.searchTerm} onChange={this.handleSearchTermEvent}/>
+        <input type="text" onKeyPress={this.handleKeyPress} className="form-control" placeholder="Search a person's email" value={this.state.searchTerm} onChange={this.handleSearchTermEvent}/>
         <span className="input-group-btn">
           <button className="btn btn-secondary" onClick={() => this.searchAndClear(this.state.searchTerm)}>Search</button>
         </span>
