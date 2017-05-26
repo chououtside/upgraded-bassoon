@@ -6,23 +6,8 @@ class Search extends Component {
     super(props);
     this.state = {
       searchTerm: ''
-    }
+    };
     this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this);
-  }
-
-  componentWillMount () {
-    axios({
-      method: 'get',
-      url: 'https://api.fullcontact.com/v2/person.json?email=chmtek@gmail.com&apiKey=f6bbbb0ebc51003',
-      responseType: 'json'
-    })
-    .then(function(response){
-      console.log(response)
-    })
-    .catch(function(error){
-      console.log('this is', error)
-      alert(error)
-    })
   }
 
   handleSearchTermEvent (event) {
@@ -31,11 +16,18 @@ class Search extends Component {
     });
   }
 
+  searchAndClear (email) {
+    this.props.search(email);
+    this.setState({
+      searchTerm: ''
+    });
+  }
+
   render () {
     return (
       <div>
-        <input type="text" placeholder="Search a person's email" value={this.props.searchTerm} onChange={this.handleSearchTermEvent}/>
-        <button>Search</button>
+        <input type="text" placeholder="Search a person's email" value={this.state.searchTerm} onChange={this.handleSearchTermEvent}/>
+        <button onClick={() => this.searchAndClear(this.state.searchTerm)}>Search</button>
       </div>
     );
   }
