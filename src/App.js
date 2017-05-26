@@ -30,7 +30,7 @@ class App extends Component {
         });
       }
     })
-    .catch(function(error){
+    .catch((error) =>{
       alert(error.response.data.message);
     })
   }
