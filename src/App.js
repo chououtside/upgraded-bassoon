@@ -23,17 +23,15 @@ class App extends Component {
     })
     .then((response) => {
       if (response.status !== 200) {
-        alert('Received status code:', response.status)
+        alert('Received status code:', response.status);
       } else {
         this.setState({
           infoObject: response.data
-        })
+        });
       }
-      console.log(this.state.infoObject);
     })
     .catch(function(error){
-      console.log(error);
-      alert(error);
+      alert(error.response.data.message);
     })
   }
 

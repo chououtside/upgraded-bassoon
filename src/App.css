@@ -12,6 +12,10 @@ ul {
   padding-bottom: 10px;
 }
 
+li {
+  text-align: left;
+}
+
 .input-group {
   margin: auto;
 }
