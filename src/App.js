@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Search from './search';
 import Info from './info';
 import axios from 'axios';
+import apiKey from './key.js'
 import './App.css';
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
   searchPerson (email) {
     axios({
       method: 'get',
-      url: `https://api.fullcontact.com/v2/person.json?email=${email}&apiKey=f6bbbb0ebc51003`,
+      url: `https://api.fullcontact.com/v2/person.json?email=${email}&apiKey=${apiKey}`,
       responseType: 'json'
     })
     .then((response) => {
