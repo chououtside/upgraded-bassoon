@@ -6,7 +6,7 @@ const Info = ({ infoObject }) => {
   return <div>
     <div><img src={!infoObject.photos ? 'https://goo.gl/n4mq73' : infoObject.photos[0].url} className="photo"/></div>
     <div><span>Full Name: </span>{!infoObject.contactInfo ? 'N/A' : infoObject.contactInfo.fullName}</div>
-    <div><span>General Location: </span>{!infoObject.demographics ? 'N/A' : infoObject.demographics.locationGeneral}</div>
+    <div><span>General Location: </span>{!infoObject.demographics ? 'N/A' : !infoObject.demographics.locationGeneral ? 'N/A' : infoObject.demographics.locationGeneral}</div>
     <div>
       <span>Links to all Given Profiles</span>
       <ul>
